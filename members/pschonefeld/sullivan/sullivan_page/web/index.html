@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animated SVG Filter Effect</title>
+    <link rel="stylesheet" href="sullivan.css"><!-- << CHANGE THIS TO YOUR PROJECT NAME -->
+    <link rel="stylesheet" href="http://svg-developers.github.io/stylesheets/styles.css">
+    <link rel="stylesheet" href="http://svg-developers.github.io/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      
+      <!-- Pls keep header tag as is -->
+      <header></header>
+            
+      <section>
+        
+        <h2>Animated SVG Filter Effect</h2>
+        
+        <!-- Google+ Badge: pls change data-href to your G+ profile, eg: data-href="//plus.google.com/114245666748409513019" -->
+        <div class="g-plus" data-width="400" data-height="69" data-href="https://plus.google.com/u/0/114245666748409513019" data-rel="author"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+        
+        <!--Your page app goes here --->
+        <p>Transparent png image + spec lighting over texture (animated via dom with dart) - Original pen drawing by Edmund J Sullivan 1900 published in Modern Pen Drawings, 1901</p>
+    
+        <div id="container_id" style="margin-left:7px">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="480px" height="660px" preserveAspectRatio="xMidYMid meet" style="overflow:hidden">
+            <defs>
+              <filter id="fltrTexture1" filterUnits="objectBoundingBox" x="-30%" y="-30%" width="160%" height="160%" filterRes="150">
+                <feTurbulence id="fltrprimTurbulence" type="turbulence" stitchTiles="stitch" baseFrequency="0.1,0.1" numOctaves="9" seed="13" result="noise">
+                  <!--<animate attributeType="XML" attributeName="seed" from="1" to="10" dur="2s" repeatCount="indefinite" />-->
+                </feTurbulence>
+                <feGaussianBlur id="fltrprimBlur" in="noise" stdDeviation="17.9,0.5" result="motionBlur"/>
+                <feSpecularLighting id="fltrprimLighting" in="motionBlur" surfaceScale="10.0" specularConstant="0.2" specularExponent="23.0" lighting-color="rgb(255,235,235)" result="lighting">
+                  <fePointLight id="fltrprimPointLight" x="-5000" y="-10000" z="70000"/>
+                </feSpecularLighting>
+                <feComposite in="lighting" in2="SourceAlpha" operator="in"/>
+              </filter>
+              
+              <filter id="fltrLighting" filterUnits="objectBoundingBox" x="-30%" y="-30%" width="160%" height="160%" filterRes="800">
+                 <feImage xlink:href="#background" x="10" result="back"/>
+                 <feDiffuseLighting result="spotlight" diffuseConstant="5" lighting-color="#700">
+                      <feSpotLight x = "1000" y = "1000" z = "4000" pointsAtX="0" pointsAtY="-100" pointsAtZ="-100" limitingConeAngle="9.5"/>
+                 </feDiffuseLighting> 
+                 <feComposite in2="back" in="spotlight"  operator="arithmetic" k1="0" k2="0.8" k3="0.8" k4="0" result="comp" />
+                 <feBlend in="SourceGraphic" in2="comp" method="multiply" />  
+              </filter>              
+
+              <g id="background">
+                <rect id="rectBack" width="480" height="660" fill="rgb(0,0,0)"/>
+                <g filter="url(#fltrTexture1)">  
+                  <rect width="480" height="660" fill="white" />
+                </g>
+              </g>
+
+            </defs>
+
+            <image id="imgSullivan" xlink:href="images/sullivan1900.png" width="480" height="660" filter="url(#fltrLighting)" />
+            <!--<image xlink:href="images/sullivan1900.png" width="480" height="660" />-->            
+            
+          </svg>
+        </div>
+        
+        <p style="margin-top:14px">While SGV filter effects are now implemented in all major browsers, unfortunately this is only working as we like it in Chrome.  Script animation in IE is working the final comp on the background texture and final SourceGraphic are out. This also seems to be the problem in ff and opera. The good news is that the problems are things to be fixed rather than 'not implemented' features, so just a matter of ironing out the bugs. Declaritive animation on the filter effects doesnt seem to be working in any of the browsers.</p>
+
+        <div style="clear:both">
+          <figure style="float:left;margin-left:7px;display:block">
+              <img src="images/ie.png" style="width:200px;height:275px" />
+              <figcaption>in IE10 (DOM Animation OK)</figcaption>
+          </figure>
+          <figure style="float:right;margin-left:7px;display:block">
+              <img src="images/ff.png" style="width:200px;height:275px" />
+              <figcaption>in Firefox 20.0</figcaption>
+          </figure>             
+        </div>        
+
+        <p style="margin-top:14px">
+          Dart Code<br/>
+          <code>
+            <pre>
+              
+import 'dart:html';
+import 'dart:math';              
+
+void main(){              
+  var count = 51;
+  var multiplier = 1;
+  var rng = new Random();
+  var timer = new Timer.periodic(const Duration(milliseconds: 100),(t){
+    if(count==120 || count == 50){
+      multiplier *= -1;
+    }
+    count = count + (1*multiplier);
+    query("#fltrTexture1").attributes["filterRes"] = "${count}";    
+    query("#fltrprimTurbulence").attributes["seed"] = "${rng.nextInt(10)}"; 
+  });
+}
+           </pre> 
+          </code>
+          
+        Note the update of the filterRes, while it might add some to the effect here, it was put in because of quirk in Chrome where the filter effect will not update in realtime unless this is tweaked along with the other attribute value. More info <a href='https://code.google.com/p/chromium/issues/detail?id=244054'>here</a>.   
+        </p>
+      <p style="margin-top:14px">
+          And the SVG (just drop it into your html)...<br/>
+          <code>    
+            <pre>
+&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="480px" height="660px" preserveAspectRatio="xMidYMid meet"&gt; 
+
+  &lt;defs&gt;
+    &lt;filter id="fltrTexture1" filterUnits="objectBoundingBox" x="-30%" y="-30%" width="160%" height="160%" filterRes="800"&gt;
+      &lt;feTurbulence id="fltrprimTurbulence" type="turbulence" stitchTiles="stitch" baseFrequency="0.1,0.1" numOctaves="9" seed="13" result="noise"/&gt;
+      &lt;feGaussianBlur id="fltrprimBlur" in="noise" stdDeviation="17.9,0.5" result="motionBlur"/&gt;
+      &lt;feSpecularLighting id="fltrprimLighting" in="motionBlur" surfaceScale="10.0" specularConstant="0.2" specularExponent="23.0" lighting-color="rgb(255,235,235)" result="lighting"&gt;
+        &lt;fePointLight id="fltrprimPointLight" x="-5000" y="-10000" z="70000"&gt;&lt;/fePointLight&gt;
+      &lt;/feSpecularLighting&gt;
+      &lt;feComposite in="lighting" in2="SourceAlpha" operator="in"/&gt;
+    &lt;/filter&gt;
+    
+    &lt;filter id="fltrLighting" filterUnits="objectBoundingBox" x="-30%" y="-30%" width="160%" height="160%" filterRes="150"&gt;
+       &lt;feImage xlink:href="#background" x="10" result="back"/&gt;
+       &lt;feDiffuseLighting result="spotlight" diffuseConstant="5" lighting-color="#700"&gt;
+            &lt;feSpotLight x = "1000" y = "1000" z = "4000" pointsAtX="0" pointsAtY="-100" pointsAtZ="-100" limitingConeAngle="9.5"/&gt;
+       &lt;/feDiffuseLighting&gt; 
+       &lt;feComposite in2="back" in="spotlight"  operator="arithmetic" k1="0" k2="0.8" k3="0.8" k4="0" result="comp" /&gt;
+       &lt;feBlend in="SourceGraphic" in2="comp" method="multiply" /&gt;  
+    &lt;/filter&gt;              
+
+    &lt;g id="background"&gt;
+      &lt;rect id="rectBack" width="480" height="660" fill="black"/&gt;
+      &lt;g filter="url(#fltrTexture1)"&gt;  
+        &lt;rect width="480" height="660" fill="white" /&gt;
+      &lt;/g&gt;
+    &lt;/g&gt;
+
+  &lt;/defs&gt;
+
+  &lt;image xlink:href="images/sullivan1900.png" width="480" height="660" filter="url(#fltrLighting)" /&gt;
+
+&lt;/svg&gt;  
+  
+        </pre>      
+      </code>  
+      </p>
+      <p style="margin-top:14px;padding:7px;background:#dedede">
+         Our Google+ SVG-Developer community is brand new and looking for new members. There is also a space here for your SVG examples and tutorials. 
+      </p>        
+        
+        <!--Your page app ends here --->
+      </section>
+      
+    </div>
+    
+    <script type="application/dart" src="sullivan.dart"></script><!-- Change to the name of your project -->
+    <script src="packages/browser/dart.js"></script><!-- Keep as is -->
+  </body>
+</html>
