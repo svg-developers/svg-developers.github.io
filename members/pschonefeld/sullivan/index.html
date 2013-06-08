@@ -98,10 +98,10 @@ void main(){
   var multiplier = 1;
   var rng = new Random();
   var timer = new Timer.periodic(const Duration(milliseconds: 100),(t){
-    if(count==120 || count == 50){
+    if(count == 120 || count == 50){
       multiplier *= -1;
     }
-    count = count + (1*multiplier);
+    count += 1*multiplier;
     query("#fltrTexture1").attributes["filterRes"] = "${count}";    
     query("#fltrprimTurbulence").attributes["seed"] = "${rng.nextInt(10)}"; 
   });
