@@ -1,0 +1,7 @@
+/* your page specific css here */
+path[id^='path'] {
+    fill:#FFCE00;
+    stroke:#000000;
+    stroke-width:1.1805;
+    stroke-opacity:0.2 
+}

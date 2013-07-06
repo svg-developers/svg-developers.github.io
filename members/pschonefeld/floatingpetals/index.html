@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Floating Petals</title>
+    <link rel="stylesheet" href="floating_petals.css"><!-- << CHANGE THIS TO YOUR PROJECT NAME -->
+    <link rel="stylesheet" href="http://svg-developers.github.io/stylesheets/styles.css">
+    <link rel="stylesheet" href="http://svg-developers.github.io/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      
+      <!-- Pls keep header tag as is -->
+      <header></header>
+            
+      <section>
+        
+        <h2>SVG Physical Attraction (with Dart and Box2D) </h2>
+        
+        <!-- Google+ Badge: pls change data-href to your G+ profile, eg: data-href="//plus.google.com/114245666748409513019" -->
+        <div class="g-plus" data-width="400" data-height="69" data-href="https://plus.google.com/u/0/114245666748409513019" data-rel="author"></div>
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+        
+        <!--Your page app goes here --->
+        <p>A Box2D demo to show how to hook the physics engine up with SVG and the DOM.</p>
+    
+        <div id="container">
+          <svg id="floatingPetals" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="511.5px"
+             height="721.5px" viewBox="0 0 511.5 721.5" enable-background="new 0 0 511.5 721.5" xml:space="preserve">
+          <g id="Layer_2">
+            <rect fill="#2E1980" stroke="#663300" stroke-width="1.1805" width="511.5" height="721.5"/>
+          </g>
+          <g id="Layer_1">
+            <!-- shape generated at vectorshapes.com -->
+            <path id="path_1" opacity="0.37" d="M255.924,171.647h62.092l72.6,27.247L255.924,171.647z"/>
+            <path id="path_2" opacity="0.37" d="M255.924,171.647l44.927,39.251l72.599,27.248L255.924,171.647z"/>
+            <path id="path_3" opacity="0.37" d="M255.924,171.647l72.6,27.247l44.926,39.252L255.924,171.647z"/>
+            <path id="path_4" opacity="0.37" d="M255.924,171.647l32.856,61.058l44.927,39.252L255.924,171.647z"/>
+            <path id="path_5" opacity="0.37" d="M255.924,171.647l44.927,39.251l32.856,61.059L255.924,171.647z"/>
+            <path id="path_6" opacity="0.37" d="M255.924,171.647l8.658,63.923l32.857,61.058L255.924,171.647z"/>
+            <path id="path_7" opacity="0.37" d="M255.924,171.647l32.856,61.058l8.659,63.923L255.924,171.647z"/>
+            <path id="path_8" opacity="0.37" d="M255.924,171.647l-13.432,58.845l8.659,63.922L255.924,171.647z"/>
+            <path id="path_9" opacity="0.37" d="M255.924,171.647l8.658,63.923l-13.431,58.844L255.924,171.647z"/>
+            <path id="path_10" opacity="0.37" d="M255.924,171.647l-51.276,77.679l-13.431,58.845L255.924,171.647z"/>
+            <path id="path_11" opacity="0.37" d="M255.924,171.647l-13.432,58.845l-51.275,77.679L255.924,171.647z"/>
+            <path id="path_12" opacity="0.37" d="M255.924,171.647l-48.897,35.524l-51.275,77.68L255.924,171.647z"/>
+            <path id="path_13" opacity="0.37" d="M255.924,171.647l-51.276,77.679l-48.896,35.525L255.924,171.647z"/>
+            <path id="path_14" opacity="0.37" d="M255.924,171.647l-61.942,17.095l-48.896,35.525L255.924,171.647z"/>
+            <path id="path_15" opacity="0.37" d="M255.924,171.647l-48.897,35.524l-61.941,17.096L255.924,171.647z"/>
+            <path id="path_16" opacity="0.37" d="M255.924,171.647l-69.541-6.259l-61.941,17.095L255.924,171.647z"/>
+            <path id="path_17" opacity="0.37" d="M255.924,171.647l-61.942,17.095l-69.54-6.259L255.924,171.647z"/>
+            <path id="path_18" opacity="0.37" d="M255.924,171.647l-53.732-25.876l-69.541-6.259L255.924,171.647z"/>
+            <path id="path_19" opacity="0.37" d="M255.924,171.647l-69.541-6.259l-53.732-25.876L255.924,171.647z"/>
+            <path id="path_20" opacity="0.37" d="M255.924,171.647l-52.913-55.342L149.279,90.43L255.924,171.647z"/>
+            <path id="path_21" opacity="0.37" d="M255.924,171.647l-53.732-25.876L149.279,90.43L255.924,171.647z"/>
+            <path id="path_22" opacity="0.37" d="M255.924,171.647l-24.468-57.244l-52.912-55.341L255.924,171.647z"/>
+            <path id="path_23" opacity="0.37" d="M255.924,171.647l-52.913-55.342l-24.467-57.243L255.924,171.647z"/>
+            <path id="path_24" opacity="0.37" d="M255.924,171.647l-2.76-61.451l-24.468-57.244L255.924,171.647z"/>
+            <path id="path_25" opacity="0.37" d="M255.924,171.647l-24.468-57.244l-2.76-61.451L255.924,171.647z"/>
+            <path id="path_26" opacity="0.37" d="M255.924,171.647l25.483-78.432l-2.76-61.45L255.924,171.647z"/>
+            <path id="path_27" opacity="0.37" d="M255.924,171.647l-2.76-61.451l25.483-78.431L255.924,171.647z"/>
+            <path id="path_28" opacity="0.37" d="M255.924,171.647l37.271-46.737l25.483-78.431L255.924,171.647z"/>
+            <path id="path_29" opacity="0.37" d="M255.924,171.647l25.483-78.432l37.271-46.737L255.924,171.647z"/>
+            <path id="path_30" opacity="0.37" d="M255.924,171.647l58.061-34.69l37.271-46.737L255.924,171.647z"/>
+            <path id="path_31" opacity="0.37" d="M255.924,171.647l37.271-46.737l58.061-34.69L255.924,171.647z"/>
+            <path id="path_32" opacity="0.37" d="M255.924,171.647l64.548-11.714l58.062-34.69L255.924,171.647z"/>
+            <path id="path_33" opacity="0.37" d="M255.924,171.647l58.061-34.69l64.549-11.714L255.924,171.647z"/>
+            <path id="path_34" opacity="0.37" d="M255.924,171.647l59.11,10.728l64.549-11.714L255.924,171.647z"/>
+            <path id="path_35" opacity="0.37" d="M255.924,171.647l64.548-11.714l59.111,10.727L255.924,171.647z"/>
+            <path id="path_36" opacity="0.37" d="M255.924,171.647l79.82,47.69l59.111,10.727L255.924,171.647z"/>
+            <path id="path_37" opacity="0.37" d="M255.924,171.647l59.11,10.728l79.821,47.689L255.924,171.647z"/>
+            <path id="path_38" opacity="0.37" d="M255.924,171.647l37.914,47.542l79.82,47.691L255.924,171.647z"/>
+            <path id="path_39" opacity="0.37" d="M255.924,171.647l79.82,47.69l37.914,47.543L255.924,171.647z"/>
+            <path id="path_40" opacity="0.37" d="M255.924,171.647l19.578,60.259l37.914,47.543L255.924,171.647z"/>
+            <path id="path_41" opacity="0.37" d="M255.924,171.647l37.914,47.542l19.578,60.26L255.924,171.647z"/>
+            <path id="path_42" opacity="0.37" d="M255.924,171.647l-3.232,71.956l19.58,60.258L255.924,171.647z"/>
+            <path id="path_43" opacity="0.37" d="M255.924,171.647l19.578,60.259l-3.23,71.955L255.924,171.647z"/>
+            <path id="path_44" opacity="0.37" d="M255.924,171.647l-23.423,54.798l-3.23,71.955L255.924,171.647z"/>
+            <path id="path_45" opacity="0.37" d="M255.924,171.647l-3.232,71.956L229.271,298.4L255.924,171.647z"/>
+            <path id="path_46" opacity="0.37" d="M255.924,171.647l-50.683,53.009l-23.422,54.797L255.924,171.647z"/>
+            <path id="path_47" opacity="0.37" d="M255.924,171.647l-23.423,54.798l-50.682,53.008L255.924,171.647z"/>
+            <path id="path_48" opacity="0.37" d="M255.924,171.647l-56.728,27.317l-50.682,53.01L255.924,171.647z"/>
+            <path id="path_49" opacity="0.37" d="M255.924,171.647l-50.683,53.009l-56.727,27.318L255.924,171.647z"/>
+            <path id="path_50" opacity="0.37" d="M255.924,171.647l-60.778,5.47l-56.727,27.318L255.924,171.647z"/>
+            <path id="path_51" opacity="0.37" d="M255.924,171.647l-56.728,27.317l-60.777,5.471L255.924,171.647z"/>
+            <path id="path_52" opacity="0.37" d="M255.924,171.647l-86.865-23.974l-60.777,5.47L255.924,171.647z"/>
+            <path id="path_53" opacity="0.37" d="M255.924,171.647l-60.778,5.47l-86.864-23.973L255.924,171.647z"/>
+            <path id="path_54" opacity="0.37" d="M255.924,171.647l-48.511-35.245l-86.865-23.973L255.924,171.647z"/>
+            <path id="path_55" opacity="0.37" d="M255.924,171.647l-86.865-23.974l-48.51-35.244L255.924,171.647z"/>
+            <path id="path_56" opacity="0.37" d="M255.924,171.647l-36.481-55.267l-48.51-35.245L255.924,171.647z"/>
+            <path id="path_57" opacity="0.37" d="M255.924,171.647l-48.511-35.245l-36.48-55.267L255.924,171.647z"/>
+            <path id="path_58" opacity="0.37" d="M255.924,171.647l-14.888-65.222l-36.48-55.267L255.924,171.647z"/>
+            <path id="path_59" opacity="0.37" d="M255.924,171.647l-36.481-55.267l-14.887-65.222L255.924,171.647z"/>
+            <path id="path_60" opacity="0.37" d="M255.924,171.647l8.035-59.321l-14.887-65.222L255.924,171.647z"/>
+            <path id="path_61" opacity="0.37" d="M255.924,171.647l-14.888-65.222l8.036-59.32L255.924,171.647z"/>
+            <path id="path_62" opacity="0.37" d="M255.924,171.647l40.683-75.603l8.036-59.32L255.924,171.647z"/>
+            <path id="path_63" opacity="0.37" d="M255.924,171.647l8.035-59.321l40.684-75.602L255.924,171.647z"/>
+            <path id="path_64" opacity="0.37" d="M255.924,171.647l46.131-40.304l40.684-75.603L255.924,171.647z"/>
+            <path id="path_65" opacity="0.37" d="M255.924,171.647l40.683-75.603l46.132-40.304L255.924,171.647z"/>
+            <path id="path_66" opacity="0.37" d="M255.924,171.647l58.601-21.994l46.132-40.304L255.924,171.647z"/>
+            <path id="path_67" opacity="0.37" d="M255.924,171.647l46.131-40.304l58.602-21.994L255.924,171.647z"/>
+            <path id="path_70" opacity="0.37" d="M255.924,171.647l55.807,20.944h74.841L255.924,171.647z"/>
+            <path id="path_71" opacity="0.37" d="M255.924,171.647h74.84l55.808,20.944L255.924,171.647z"/>
+            <path id="path_72" opacity="0.37" d="M255.924,171.647l53.362,46.622l55.808,20.944L255.924,171.647z"/>
+            <path id="path_73" opacity="0.37" d="M255.924,171.647l55.807,20.944l53.363,46.622L255.924,171.647z"/>
+            <path id="path_74" opacity="0.37" d="M255.924,171.647l30.229,56.175l53.363,46.621L255.924,171.647z"/>
+            <path id="path_75" opacity="0.37" d="M255.924,171.647l53.362,46.622l30.229,56.174L255.924,171.647z"/>
+            <path id="path_76" opacity="0.37" d="M255.924,171.647l8.136,60.065l30.229,56.176L255.924,171.647z"/>
+            <path id="path_77" opacity="0.37" d="M255.924,171.647l30.229,56.175l8.137,60.066L255.924,171.647z"/>
+            <path id="path_78" opacity="0.37" d="M255.924,171.647l-20.721,90.78l8.136,60.066L255.924,171.647z"/>
+            <path id="path_79" opacity="0.37" d="M255.924,171.647l8.136,60.065l-20.721,90.781L255.924,171.647z"/>
+            <path id="path_80" opacity="0.37" d="M255.924,171.647l-33.169,50.249l-20.721,90.78L255.924,171.647z"/>
+            <path id="path_81" opacity="0.37" d="M255.924,171.647l-20.721,90.78l-33.169,50.249L255.924,171.647z"/>
+            <path id="path_82" opacity="0.37" d="M255.924,171.647l-52.612,38.224l-33.168,50.249L255.924,171.647z"/>
+            <path id="path_83" opacity="0.37" d="M255.924,171.647l-33.169,50.249l-52.611,38.224L255.924,171.647z"/>
+            <path id="path_84" opacity="0.37" d="M255.924,171.647l-65.981,18.21l-52.611,38.224L255.924,171.647z"/>
+            <path id="path_85" opacity="0.37" d="M255.924,171.647l-52.612,38.224l-65.98,18.21L255.924,171.647z"/>
+            <path id="path_86" opacity="0.37" d="M255.924,171.647l-59.472-5.353l-65.981,18.209L255.924,171.647z"/>
+            <path id="path_87" opacity="0.37" d="M255.924,171.647l-65.981,18.21l-59.471-5.354L255.924,171.647z"/>
+            <path id="path_88" opacity="0.37" d="M255.924,171.647l-71.86-34.605l-59.47-5.353L255.924,171.647z"/>
+            <path id="path_89" opacity="0.37" d="M255.924,171.647l-59.472-5.353l-71.858-34.605L255.924,171.647z"/>
+            <path id="path_90" opacity="0.37" d="M255.924,171.647l-42.702-44.663l-71.859-34.605L255.924,171.647z"/>
+            <path id="path_91" opacity="0.37" d="M255.924,171.647l-71.86-34.605l-42.701-44.663L255.924,171.647z"/>
+            <path id="path_92" opacity="0.37" d="M255.924,171.647l-24.344-56.954l-42.702-44.662L255.924,171.647z"/>
+            <path id="path_93" opacity="0.37" d="M255.924,171.647l-42.702-44.663l-24.344-56.954L255.924,171.647z"/>
+            <path id="path_94" opacity="0.37" d="M255.924,171.647l-3.527-78.525l-24.343-56.954L255.924,171.647z"/>
+            <path id="path_95" opacity="0.37" d="M255.924,171.647l-24.344-56.954l-3.526-78.524L255.924,171.647z"/>
+            <path id="path_96" opacity="0.37" d="M255.924,171.647l18.442-56.762l-3.526-78.524L255.924,171.647z"/>
+            <path id="path_97" opacity="0.37" d="M255.924,171.647l-3.527-78.525l18.443-56.762L255.924,171.647z"/>
+            <path id="path_98" opacity="0.37" d="M255.924,171.647l42.945-53.854l18.443-56.762L255.924,171.647z"/>
+            <path id="path_99" opacity="0.37" d="M255.924,171.647l18.442-56.762l42.946-53.853L255.924,171.647z"/>
+            <path id="path_100" opacity="0.37" d="M255.924,171.647l55.596-33.218l42.946-53.853L255.924,171.647z"/>
+            <path id="path_101" opacity="0.37" d="M255.924,171.647l42.945-53.854l55.597-33.217L255.924,171.647z"/>
+            <path id="path_102" opacity="0.37" d="M255.924,171.647l59.312-10.764l55.597-33.218L255.924,171.647z"/>
+            <path id="path_103" opacity="0.37" d="M255.924,171.647l55.596-33.218l59.313-10.764L255.924,171.647z"/>
+            <path id="path_104" opacity="0.37" d="M255.924,171.647l91.594,16.622l59.312-10.764L255.924,171.647z"/>
+            <path id="path_105" opacity="0.37" d="M255.924,171.647l59.312-10.764l91.594,16.622L255.924,171.647z"/>
+            <path id="path_106" opacity="0.37" d="M255.924,171.647l51.957,31.043l91.594,16.622L255.924,171.647z"/>
+            <path id="path_107" opacity="0.37" d="M255.924,171.647l91.594,16.622l51.957,31.043L255.924,171.647z"/>
+            <path id="path_108" opacity="0.37" d="M255.924,171.647l39.915,50.052l51.957,31.043L255.924,171.647z"/>
+            <path id="path_109" opacity="0.37" d="M255.924,171.647l51.957,31.043l39.915,50.052L255.924,171.647z"/>
+            <path id="path_110" opacity="0.37" d="M255.924,171.647l21.732,66.886l39.915,50.053L255.924,171.647z"/>
+            <path id="path_111" opacity="0.37" d="M255.924,171.647l39.915,50.052l21.732,66.887L255.924,171.647z"/>
+            <path id="path_112" opacity="0.37" d="M255.924,171.647l-2.676,59.561l21.732,66.887L255.924,171.647z"/>
+            <path id="path_113" opacity="0.37" d="M255.924,171.647l21.732,66.886l-2.676,59.562L255.924,171.647z"/>
+            <path id="path_114" opacity="0.37" d="M255.924,171.647l-29.74,69.579l-2.675,59.561L255.924,171.647z"/>
+            <path id="path_115" opacity="0.37" d="M255.924,171.647l-2.676,59.561l-29.739,69.579L255.924,171.647z"/>
+            <path id="path_116" opacity="0.37" d="M255.924,171.647l-43.137,45.116l-29.739,69.58L255.924,171.647z"/>
+            <path id="path_117" opacity="0.37" d="M255.924,171.647l-29.74,69.579l-43.136,45.117L255.924,171.647z"/>
+            <path id="path_118" opacity="0.37" d="M255.924,171.647l-55.304,26.632l-43.137,45.117L255.924,171.647z"/>
+            <path id="path_119" opacity="0.37" d="M255.924,171.647l-43.137,45.116l-55.304,26.633L255.924,171.647z"/>
+            <path id="path_120" opacity="0.37" d="M255.924,171.647l-83.725,7.535l-55.303,26.632L255.924,171.647z"/>
+            <path id="path_121" opacity="0.37" d="M255.924,171.647l-55.304,26.632l-83.724,7.535L255.924,171.647z"/>
+            <path id="path_122" opacity="0.37" d="M255.924,171.647l-57.663-15.914l-83.725,7.535L255.924,171.647z"/>
+            <path id="path_123" opacity="0.37" d="M255.924,171.647l-83.725,7.535l-57.663-15.914L255.924,171.647z"/>
+            <path id="path_124" opacity="0.37" d="M255.924,171.647l-54.413-39.534L143.847,116.2L255.924,171.647z"/>
+            <path id="path_125" opacity="0.37" d="M255.924,171.647l-57.663-15.914L143.847,116.2L255.924,171.647z"/>
+            <path id="path_126" opacity="0.37" d="M255.924,171.647l-36.309-55.004L165.202,77.11L255.924,171.647z"/>
+            <path id="path_127" opacity="0.37" d="M255.924,171.647l-54.413-39.534L165.202,77.11L255.924,171.647z"/>
+            <path id="path_128" opacity="0.37" d="M255.924,171.647l-13.355-58.513l-36.308-55.004L255.924,171.647z"/>
+            <path id="path_129" opacity="0.37" d="M255.924,171.647l-36.309-55.004l-13.354-58.513L255.924,171.647z"/>
+            <path id="path_130" opacity="0.37" d="M255.924,171.647l12.355-91.219l-13.354-58.512L255.924,171.647z"/>
+            <path id="path_131" opacity="0.37" d="M255.924,171.647l-13.355-58.513l12.356-91.219L255.924,171.647z"/>
+            <path id="path_132" opacity="0.37" d="M255.924,171.647l28.864-53.641l12.356-91.219L255.924,171.647z"/>
+            <path id="path_133" opacity="0.37" d="M255.924,171.647l12.355-91.219l28.865-53.641L255.924,171.647z"/>
+            <path id="path_134" opacity="0.37" d="M255.924,171.647l47.561-41.553l28.865-53.641L255.924,171.647z"/>
+            <path id="path_135" opacity="0.37" d="M255.924,171.647l28.864-53.641l47.562-41.553L255.924,171.647z"/>
+            <path id="path_136" opacity="0.37" d="M255.924,171.647l68.031-25.533l47.561-41.553L255.924,171.647z"/>
+            <path id="path_137" opacity="0.37" d="M255.924,171.647l47.561-41.553l68.031-25.533L255.924,171.647z"/>
+            <path id="path_138" opacity="0.37" d="M255.924,171.647h59.591l68.031-25.533L255.924,171.647z"/>
+            <path id="path_139" opacity="0.37" d="M255.924,171.647l68.031-25.533h59.591L255.924,171.647z"/>
+            <path id="path_142" opacity="0.37" d="M255.924,171.647l72.6,27.247h59.59L255.924,171.647z"/>
+            <rect id="ground" y="708.5" fill="#FF6600" stroke="#000000" stroke-width="1.1805" width="511.5" height="13"/>
+          </g>
+          </svg>
+        </div>
+ 
+        <p style="margin-top:7px">The following code demonstrates how to 'hook-up' the SVG with box engine. An advantage of this approach is that SVG elements can revceive events (e.g. hover to change opacity).</p>
+        
+        <pre><code style="font-size:85%">
+import 'dart:html';
+import 'dart:svg';
+import 'dart:math';
+import 'package:box2d/box2d.dart';  
+
+//hint: add the package to your dart editor project by opening the 
+//pubspec.yaml; adding Box2D under dependencies and then 
+//running pub install via the link that will be at the top right of page    
+
+...
+    
+World _world;
+Map&lt;String,TransformItem&gt; _items = new Map&lt;String,TransformItem&gt;();    
+    
+main {    
+
+  ...
+    
+  //use css selector to create a collection of svg elements to animate
+  //(shapes defined in html doc as &lt;path id=&quot;path_138&quot; ... d=&quot;...&quot;/&gt; )
+  queryAll("[id^=&quot;path&quot;]").forEach((SvgElement e){
+  
+    //set the shape and position of the shape in the box2d world
+    var rect = e.getBoundingClientRect();
+    fixDef.shape = new CircleShape();
+    fixDef.shape.radius = 5.0/SCALE;    
+    bodyDef.position.x = (rect.left+rect.width/2)/SCALE;
+    bodyDef.position.y = rect.top/SCALE;
+  
+    //link the svg element to the fixture via the id attribute
+    bodyDef.userData = e.id;
+  
+    //TransformItem is a helper class for operating on the SVG Element
+    //and is held in a Map for easy access, note the position is on 
+    //SVG canvas not at world scale.
+    TransformItem item = new TransformItem(e);
+    item.center = new Vector(
+      (rect.left+rect.width/2).toDouble(),
+      (rect.top+rect.height/2).toDouble());
+    _items[e.id] = item;
+    
+    //add the item to world
+    Body b = _world.createBody(bodyDef);
+    b.createFixture(fixDef);
+    
+    item.orginalMass = b.mass; //playing with mass to add the jitter effect
+    
+    //and add some user interaction
+    e.onMouseOver.listen((_)=> _.currentTarget.attributes["opacity"] = "0.2");
+    
+  });
+
+  requestAnimationFrame().then(update);
+
+}
+        </code></pre>        
+        
+        <p>...and the update method for each animation frame...</p>
+        
+        <pre><code style="font-size:85%">
+dynamic update(num highResTime){
+
+  _world.step(1/50,10,10); 
+  _world.clearForces();
+  
+  requestAnimationFrame().then(update); //keep the show running
+  
+  //iterate through each box body
+  for(Body b = _world.bodyList; b != null; b = b.next){
+  
+    if(b.type!=BodyType.STATIC){
+      
+      //set up the relationship between body and point of attraction 
+      Vector itemPosition = b.position;
+      Vector targetPosition = _targetPointOfAttraction;
+      Vector targetDistance = new Vector.zero(); 
+      targetDistance.addLocal(itemPosition);
+      targetDistance.subLocal(targetPosition);
+      num finalDistance = targetDistance.length;
+      targetDistance.negateLocal();
+      //divsors reduce the magnitude of force
+      targetDistance = new Vector(targetDistance.x/50,targetDistance.y/50);
+
+      //get the svg element's helper object
+      TransformItem path = _items[b.userData]; 
+      
+      //playing around with mass
+      double multiplier = 1+1.1755*(_random.nextBool()?1:-1);
+      b.mass = _random.nextBool()? b.mass * multiplier: path.orginalMass;
+      
+      //apply the attraction (comment this out for falling elements)      
+      b.applyForce(targetDistance, b.position);
+      
+      //translate the position of the svg Element
+      path.setTransform(
+          new Vector(b.position.x, b.position.y),
+          b.originTransform.rotation.toString());
+      
+      //play around with opacity for effect
+      double opacity = double.parse(path.element.attributes["opacity"]);
+      path.element.attributes["opacity"] = "${opacity + 0.02 * (_random.nextBool()?-1:1)}";
+      
+    }
+    
+  }
+  
+}          
+          
+        </code></pre>
+        
+        <p>Currently having problems running in IE (as at 2013-07-06).</p> 
+        
+        <p>View the full source code <a href="">here</a> and see the references below for tutrials on working with Box2D. For more info on the Dart Programming Language see <a href="http://dartlang.org">dartlang.org</a>.</p>
+            
+        <p>Reference:<br/>
+          <ul>
+            <li><a href="http://blog.sethladd.com/2011/09/box2d-javascript-example-walkthrough.html">Box2D JavaScript Example Walkthrough</a> by Seth Ladd (<a href='http://blog.sethladd.com/'>http://blog.sethladd.com</a>)</li>
+            <li><a href="http://www.emanueleferonato.com/2012/03/28/simulate-radial-gravity-also-know-as-planet-gravity-with-box2d-as-seen-on-angry-birds-space/">Simulate planet gavity</a> by Emanuele Feronato (<a href="http://www.emanueleferonato.com">http://www.emanueleferonato.com</a>)</li>
+          </ul>
+        </p>        
+        <img src="img.png" style="float:right" />
+        <p style="margin-top:14px;padding:7px;background:#dedede;clear:both">
+          Our Google+ <a href="https://plus.google.com/u/0/communities/103214861889274824229">SVG-Developers community</a> is brand new and looking for members. There is also a space here for your SVG links, examples and tutorials. 
+        </p>        
+        
+        <!--Your page app ends here --->
+      </section>
+      
+    </div>
+    
+    <script type="application/dart" src="floating_petals.dart"></script><!-- Change to the name of your project -->
+    <script src="packages/browser/dart.js"></script><!-- Keep as is -->
+  </body>
+</html>
